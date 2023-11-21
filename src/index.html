@@ -2,12 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AccountWatcher16</title>
+  <title>Neon | Account Watcher</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='theme-color' content='#000000' />
+  <meta name='description' content=''>
+  <meta property='og:title' content='Neon | Account Watcher' />
+  <meta property='og:description' content='' />
+  <meta property='og:image' content='/assets/favicons/apple-touch-icon.png' />
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap' rel='stylesheet'>
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+    <div style='display: flex; flex-flow: column; min-height: 100vh; justify-content: center; align-items: center;'>
+      <div class='animate-spin' style='margin-bottom:10px;'>
+        <svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <path
+            d='M20 38.5C16.341 38.5 12.7643 37.415 9.72195 35.3822C6.67964 33.3494 4.30845 30.4601 2.90823 27.0796C1.50801 23.6992 1.14165 19.9795 1.85547 16.3908C2.5693 12.8022 4.33125 9.5058 6.91852 6.91852C9.5058 4.33125 12.8022 2.5693 16.3908 1.85547C19.9795 1.14165 23.6992 1.50801 27.0796 2.90823C30.4601 4.30845 33.3494 6.67964 35.3822 9.72195C37.415 12.7643 38.5 16.341 38.5 20'
+            stroke='#9F65FF' stroke-width='3' />
+        </svg>
+      </div>
+      <span style='color: white;'>Loading</span>
+    </div>
+  </app-root>
 </body>
 </html>
