@@ -16,7 +16,7 @@ export class WatcherService {
   balance = new BehaviorSubject<BigInt>(0n);
   splBalance = new BehaviorSubject<BigInt>(0n);
   connection: Connection;
-  minBalance = new Big(21e3 * 10 ** 9);
+  minBalance = new Big(50e3 * 10 ** 9);
   private clientSubscriptionId: number;
   private subs: SubscriptionLike[] = [];
 
@@ -39,7 +39,7 @@ export class WatcherService {
       if (balance.lte(this.minBalance)) {
         const expression = `Watcher: Low account balance. Current balance ${amountView(new Big(b.toString()), 9)} ${this.token.symbol}`;
         console.log(expression);
-        captureException(expression);
+        captureException(expression, { level: 'fatal' });
       }
     })).subscribe());
   }
@@ -67,7 +67,6 @@ export class WatcherService {
     this.balance.next(BigInt(balance));
     const account = getAssociatedTokenAddressSync(new PublicKey(this.token.address_spl), wallet);
     const splBalance = await this.connection.getTokenAccountBalance(account);
-    console.log(splBalance);
     if (splBalance.value) {
       const { amount, decimals } = splBalance.value;
       this.splBalance.next(BigInt(amount));
